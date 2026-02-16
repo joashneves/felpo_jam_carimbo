@@ -46,12 +46,13 @@ height = 97.6157
 [node name="Papel" type="Node2D" unique_id=1230539461 groups=["Papel"]]
 light_mask = 2
 script = ExtResource("1_p8iyx")
+velocidade = null
 
 [node name="AnimationSprite" type="AnimatedSprite2D" parent="." unique_id=576327277]
 sprite_frames = SubResource("SpriteFrames_t8r5d")
 animation = &"carimbado_1"
 autoplay = "default"
-frame_progress = 0.6971738
+frame_progress = 0.35126853
 
 [node name="Area2D" type="Area2D" parent="." unique_id=394455269 groups=["Papel"]]
 collision_mask = 2

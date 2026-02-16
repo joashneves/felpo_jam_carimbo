@@ -7,6 +7,8 @@ var carimbo_1 = load("res://Assets/Papel/pape_carimbadol.png");
 var carimbado : bool = false
 var tocando : Node2D = null;
 var direcao =  [0.05, -0.05, 0,0.07, -0.07].pick_random()
+var velocidade_em_y = [1,0, -1].pick_random()
+var mudar_de_direcao_em_x : float = 292.0
 signal papel;
 
 func _ready() -> void:
@@ -14,6 +16,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position.x -= velocidade * delta
+	if GameManager.level > 3:
+		position.y -= (20 * velocidade_em_y) * delta
 	if position.x < -64:
 		GameManager.passou_papel(carimbado)
 		queue_free()
@@ -32,5 +36,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			tocando = body
 func _on_area_2d_body_exited(body: Node2D) -> void:
 		if body.is_in_group("Carimbo"):
-			#print("Papel saiu do carimbo")
 			tocando = null

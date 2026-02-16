@@ -19,13 +19,13 @@ func _on_timer_timeout() -> void:
 			papel_instanca.velocidade = 200;
 			tempo_do_gerador = 1;
 		2:
-			papel_instanca.velocidade = 200;
+			papel_instanca.velocidade = [200, 210, 230, 250, 300].pick_random();
 			tempo_do_gerador = 1;
 		3:
-			papel_instanca.velocidade = 200;
+			papel_instanca.velocidade = [200, 230, 250, 300, 400].pick_random();
 			tempo_do_gerador = 2
 		_:
-			papel_instanca.velocidade = [200, 100].pick_random()
+			papel_instanca.velocidade = [100,200, 230, 250, 300, 350, 400, 450, 500,550].pick_random();
 			tempo_do_gerador = 2;
 	add_child(papel_instanca)
 	timer_papel.start((tempo_do_gerador))

@@ -112,5 +112,6 @@ z_index = -10
 position = Vector2(384, 216)
 sprite_frames = SubResource("SpriteFrames_ivylu")
 autoplay = "default"
+frame_progress = 0.050623316
 
 [connection signal="pressed" from="CanvasLayer/Control/Iniciar" to="." method="_on_iniciar_jogo_pressed"]
