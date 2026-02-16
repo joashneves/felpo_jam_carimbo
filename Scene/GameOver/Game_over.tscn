@@ -66,7 +66,7 @@ z_index = -10
 position = Vector2(384, 216)
 sprite_frames = SubResource("SpriteFrames_umx57")
 autoplay = "default"
-frame_progress = 0.21880008
+frame_progress = 0.022564156
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=981579150]
 
@@ -115,6 +115,42 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 text = "JOGAR NOVAMENTE"
 metadata/_edit_use_anchors_ = true
+
+[node name="PontuacaoAtual" type="Label" parent="CanvasLayer/Control" unique_id=1843346278]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -120.0
+offset_right = 86.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 28
+text = "Sua Pontuação foi : 10"
+
+[node name="PontuacaoMaximo" type="Label" parent="CanvasLayer/Control" unique_id=947543073]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -173.0
+offset_right = 150.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 28
+text = "Sua Pontuação Maxima foi : 10"
 
 [connection signal="pressed" from="CanvasLayer/Control/Menu" to="." method="_on_ir_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/JogarNovamente" to="." method="_on_jogar_novamente_pressed"]
