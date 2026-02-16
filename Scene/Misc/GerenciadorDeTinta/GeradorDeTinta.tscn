@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dpme85s08ycu8"]
+
+[ext_resource type="Script" uid="uid://deruo61tbearp" path="res://Scene/Misc/GerenciadorDeTinta/gerador_de_tinta.gd" id="1_7b5s6"]
+[ext_resource type="PackedScene" uid="uid://bnh5mjbqq7qfy" path="res://Scene/Tinta/Tinta.tscn" id="2_ixn27"]
+
+[node name="GeradorDeTinta" type="Node2D" unique_id=465841210]
+script = ExtResource("1_7b5s6")
+objetos_a_serem_criados = ExtResource("2_ixn27")
+
+[node name="Timer" type="Timer" parent="." unique_id=312603457]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

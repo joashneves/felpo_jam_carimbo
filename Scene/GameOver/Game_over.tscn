@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://ctdnnqbybbcc0"]
+
+[ext_resource type="Script" uid="uid://c75412lhfi7kn" path="res://Scene/GameOver/game_over.gd" id="1_vb268"]
+[ext_resource type="PackedScene" uid="uid://1wjhvpfv6scb" path="res://Scene/Menu/Menu.tscn" id="2_erkmu"]
+[ext_resource type="PackedScene" uid="uid://cssm7lytq2jnb" path="res://Main.tscn" id="3_f2kws"]
+[ext_resource type="Texture2D" uid="uid://civn12d53ahbm" path="res://Assets/Background/Bg_animado/felpojam1.png" id="4_rjfne"]
+[ext_resource type="Texture2D" uid="uid://de6oehmxbtb4m" path="res://Assets/Background/Bg_animado/felpojam2.png" id="5_44xot"]
+[ext_resource type="Texture2D" uid="uid://bpctrv22pgyh1" path="res://Assets/Background/Bg_animado/felpojam3.png" id="6_sp51i"]
+[ext_resource type="Texture2D" uid="uid://b7mdfh4xdxbsm" path="res://Assets/Background/Bg_animado/felpojam4.png" id="7_jyakm"]
+[ext_resource type="Texture2D" uid="uid://e010a52xhgca" path="res://Assets/Background/Bg_animado/felpojam5.png" id="8_dv5vn"]
+[ext_resource type="Texture2D" uid="uid://big4qbehtt6ld" path="res://Assets/Background/Bg_animado/felpojam6.png" id="9_800sr"]
+[ext_resource type="Texture2D" uid="uid://b4t8cemuj52h" path="res://Assets/Background/Bg_animado/felpojam7.png" id="10_211mt"]
+[ext_resource type="Texture2D" uid="uid://cgwmh2y8pu6vx" path="res://Assets/Background/Bg_animado/felpojam8.png" id="11_lj60c"]
+[ext_resource type="Texture2D" uid="uid://dvwsaowi1cgo7" path="res://Assets/Background/Bg_animado/felpojam9.png" id="12_tyjri"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_umx57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rjfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_44xot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sp51i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jyakm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dv5vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_800sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_211mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lj60c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tyjri")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="GameOver" type="Node2D" unique_id=1225444088]
+script = ExtResource("1_vb268")
+menu_cena = ExtResource("2_erkmu")
+jogar_cena = ExtResource("3_f2kws")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1081571056]
+position = Vector2(384, 216)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 768
+limit_bottom = 432
+
+[node name="BackgroundAnimado" type="AnimatedSprite2D" parent="." unique_id=1572743846]
+z_index = -10
+position = Vector2(384, 216)
+sprite_frames = SubResource("SpriteFrames_umx57")
+autoplay = "default"
+frame_progress = 0.21880008
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=981579150]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=841029455]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.7680054
+offset_right = 0.7680054
+offset_bottom = 864.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Button" parent="CanvasLayer/Control" unique_id=183992731]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "IR PARA MENU"
+metadata/_edit_use_anchors_ = true
+
+[node name="JogarNovamente" type="Button" parent="CanvasLayer/Control" unique_id=257043424]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 50.0
+offset_right = 95.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "JOGAR NOVAMENTE"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Control/Menu" to="." method="_on_ir_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/JogarNovamente" to="." method="_on_jogar_novamente_pressed"]

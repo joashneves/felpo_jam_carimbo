@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bnh5mjbqq7qfy"]
+
+[ext_resource type="Script" uid="uid://1pihb72fscck" path="res://Scene/ObjetoAleatorio/objeto_aleatorio.gd" id="1_gno3d"]
+[ext_resource type="Texture2D" uid="uid://udsohe4eokkw" path="res://Assets/32x32.png" id="2_w2svt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prs7k"]
+size = Vector2(32, 32)
+
+[node name="Tinta" type="Node2D" unique_id=1051470891 groups=["Objetos"]]
+light_mask = 4
+script = ExtResource("1_gno3d")
+dano = -50
+pontos = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=992511150]
+modulate = Color(0.2784314, 0.28627452, 0.30588236, 1)
+light_mask = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_w2svt")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=309557779 groups=["Objetos"]]
+visibility_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=468401212]
+light_mask = 5
+visibility_layer = 5
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_prs7k")
+debug_color = Color(0, 0.80717653, 0.54490066, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

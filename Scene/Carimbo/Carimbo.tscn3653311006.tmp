@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://mx2l5pspfu5h"]
+
+[ext_resource type="Texture2D" uid="uid://udsohe4eokkw" path="res://Assets/32x32.png" id="1_po7v8"]
+[ext_resource type="Script" uid="uid://ch50fsiycqrws" path="res://Scene/Carimbo/carimbo.gd" id="1_rh1vq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh1vq"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqqd4"]
+size = Vector2(64, 64)
+
+[node name="Carimbo" type="StaticBody2D" unique_id=394302040 groups=["Carimbo"]]
+script = ExtResource("1_rh1vq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1455967318]
+shape = SubResource("RectangleShape2D_rh1vq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=754425997]
+modulate = Color(0.7647059, 0, 0, 1)
+position = Vector2(-32, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("1_po7v8")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1131532037]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=101103476]
+shape = SubResource("RectangleShape2D_oqqd4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

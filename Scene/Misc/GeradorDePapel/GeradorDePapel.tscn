@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://11crq2tf6iox"]
+
+[ext_resource type="Script" uid="uid://bhpk5vealfe10" path="res://Scene/Misc/GeradorDePapel/gerador_de_papel.gd" id="1_tu7ys"]
+
+[node name="GeradorDePapel" type="Node2D" unique_id=465841210]
+script = ExtResource("1_tu7ys")
+
+[node name="Timer" type="Timer" parent="." unique_id=312603457]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

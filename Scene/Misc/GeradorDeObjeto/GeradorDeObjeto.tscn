@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://mm26ftfrqa4e"]
+
+[ext_resource type="Script" uid="uid://haukhrv8rahw" path="res://Scene/Misc/GeradorDeObjeto/gerador_de_objeto.gd" id="1_h4xqy"]
+[ext_resource type="PackedScene" uid="uid://o62wtoqojjkr" path="res://Scene/ObjetoAleatorio/ObjetoAleatorio.tscn" id="2_g5j4n"]
+
+[node name="GeradorDeObjeto" type="Node2D" unique_id=485043465]
+script = ExtResource("1_h4xqy")
+objetos_a_serem_criados = ExtResource("2_g5j4n")
+
+[node name="Timer" type="Timer" parent="." unique_id=638147129]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://mx2l5pspfu5h"]
+
+[ext_resource type="Script" uid="uid://ch50fsiycqrws" path="res://Scene/Carimbo/carimbo.gd" id="1_rh1vq"]
+[ext_resource type="Texture2D" uid="uid://b441iqqsde47l" path="res://Assets/Carimbo/Anim_carimbo/carimbo1.png" id="2_b4ech"]
+[ext_resource type="Texture2D" uid="uid://dcul8ibc0srki" path="res://Assets/Carimbo/Anim_carimbo/carimbo2.png" id="3_t1s2e"]
+[ext_resource type="Texture2D" uid="uid://codfmwv5f8n5a" path="res://Assets/Carimbo/Anim_carimbo/carimbo3.png" id="4_hl231"]
+[ext_resource type="Texture2D" uid="uid://da88nmesp2g45" path="res://Assets/Carimbo/Anim_carimbo/carimbo4.png" id="5_vi5nw"]
+[ext_resource type="Texture2D" uid="uid://b6rvqsjqyxks3" path="res://Assets/Carimbo/Anim_carimbo/carimbo5.png" id="6_kymi7"]
+[ext_resource type="AudioStream" uid="uid://vereerd6gwe2" path="res://Assets/Sons/Carimbo/362623__kermite607__stamp.wav" id="7_t1s2e"]
+[ext_resource type="AudioStream" uid="uid://blsf50ljrcs0k" path="res://Assets/Sons/Carimbo/256760__radwoc__piecz_15.wav" id="8_hl231"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdu4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b4ech")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t1s2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hl231")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vi5nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kymi7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh1vq"]
+size = Vector2(31, 66)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rh1vq"]
+radius = 26.019224
+
+[node name="Carimbo" type="CharacterBody2D" unique_id=893954210 node_paths=PackedStringArray("sons_de_carimbo00", "sons_de_carimbo01") groups=["Carimbo"]]
+collision_layer = 2
+slide_on_ceiling = false
+script = ExtResource("1_rh1vq")
+sons_de_carimbo00 = NodePath("Audio_grampo1")
+sons_de_carimbo01 = NodePath("Audio_grampo2")
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1675495700]
+z_index = 4
+position = Vector2(-55, -57)
+sprite_frames = SubResource("SpriteFrames_jdu4b")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=153998082]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_rh1vq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2027703656 groups=["Carimbo"]]
+collision_layer = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1729442080 groups=["Carimbo"]]
+light_mask = 2
+shape = SubResource("CircleShape2D_rh1vq")
+debug_color = Color(0, 0.55064654, 0.92310196, 0.41960785)
+
+[node name="Audio_grampo1" type="AudioStreamPlayer" parent="." unique_id=588178598]
+stream = ExtResource("7_t1s2e")
+
+[node name="Audio_grampo2" type="AudioStreamPlayer" parent="." unique_id=1181862403]
+stream = ExtResource("8_hl231")
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

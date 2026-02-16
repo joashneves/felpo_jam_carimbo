@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://1wjhvpfv6scb"]
+
+[ext_resource type="Script" uid="uid://q23gsg5nw1y" path="res://Scene/Menu/menu.gd" id="1_mw8f1"]
+[ext_resource type="PackedScene" uid="uid://cssm7lytq2jnb" path="res://Main.tscn" id="2_plaiv"]
+[ext_resource type="Texture2D" uid="uid://civn12d53ahbm" path="res://Assets/Background/Bg_animado/felpojam1.png" id="3_je64r"]
+[ext_resource type="Texture2D" uid="uid://de6oehmxbtb4m" path="res://Assets/Background/Bg_animado/felpojam2.png" id="4_gwknt"]
+[ext_resource type="Texture2D" uid="uid://bpctrv22pgyh1" path="res://Assets/Background/Bg_animado/felpojam3.png" id="5_htnpo"]
+[ext_resource type="Texture2D" uid="uid://b7mdfh4xdxbsm" path="res://Assets/Background/Bg_animado/felpojam4.png" id="6_5hite"]
+[ext_resource type="Texture2D" uid="uid://e010a52xhgca" path="res://Assets/Background/Bg_animado/felpojam5.png" id="7_r2t0e"]
+[ext_resource type="Texture2D" uid="uid://big4qbehtt6ld" path="res://Assets/Background/Bg_animado/felpojam6.png" id="8_5cyot"]
+[ext_resource type="Texture2D" uid="uid://b4t8cemuj52h" path="res://Assets/Background/Bg_animado/felpojam7.png" id="9_20snb"]
+[ext_resource type="Texture2D" uid="uid://cgwmh2y8pu6vx" path="res://Assets/Background/Bg_animado/felpojam8.png" id="10_duvdl"]
+[ext_resource type="Texture2D" uid="uid://dvwsaowi1cgo7" path="res://Assets/Background/Bg_animado/felpojam9.png" id="11_q4imi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivylu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_je64r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gwknt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_htnpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5hite")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r2t0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5cyot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_20snb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_duvdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q4imi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Menu" type="Node2D" unique_id=1625415937]
+script = ExtResource("1_mw8f1")
+cena_jogo = ExtResource("2_plaiv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1437516937]
+position = Vector2(384, 216)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 768
+limit_bottom = 432
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=968453806]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=2080052820]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.7680054
+offset_right = 0.7680054
+offset_bottom = 864.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Iniciar" type="Button" parent="CanvasLayer/Control" unique_id=2052657499]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "INICIAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="Manual" type="Button" parent="CanvasLayer/Control" unique_id=1110480479]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 50.0
+offset_right = 95.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "COMO JOGAR"
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundAnimado" type="AnimatedSprite2D" parent="." unique_id=548269713]
+z_index = -10
+position = Vector2(384, 216)
+sprite_frames = SubResource("SpriteFrames_ivylu")
+autoplay = "default"
+
+[connection signal="pressed" from="CanvasLayer/Control/Iniciar" to="." method="_on_iniciar_jogo_pressed"]
