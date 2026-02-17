@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bjsvt287xt8bu" path="res://Assets/Papel/papel_auio/ae_oul2.png" id="3_a4la2"]
 [ext_resource type="Texture2D" uid="uid://ddtxs7rr0va1v" path="res://Assets/Papel/papel_auio/ae_oul3.png" id="4_2hgqp"]
 [ext_resource type="Texture2D" uid="uid://c2k4qhnjpc18q" path="res://Assets/Papel/Papel_animacao/papel3.png" id="4_4vruu"]
+[ext_resource type="Texture2D" uid="uid://dssaxe537ylw2" path="res://Assets/Papel/papel_auternativo_1/papel_variantel1.png" id="5_e8wym"]
+[ext_resource type="Texture2D" uid="uid://dcsmivfexbciu" path="res://Assets/Papel/papel_auternativo_1/papel_variantel2.png" id="6_ajbfy"]
+[ext_resource type="Texture2D" uid="uid://cifo3hured2vb" path="res://Assets/Papel/papel_auternativo_1/papel_variantel3.png" id="7_la47y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8r5d"]
 animations = [{
@@ -22,6 +25,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"carimbado_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_e8wym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ajbfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_la47y")
+}],
+"loop": true,
+"name": &"carimbado_2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -46,13 +63,12 @@ height = 97.6157
 [node name="Papel" type="Node2D" unique_id=1230539461 groups=["Papel"]]
 light_mask = 2
 script = ExtResource("1_p8iyx")
-velocidade = null
 
 [node name="AnimationSprite" type="AnimatedSprite2D" parent="." unique_id=576327277]
 sprite_frames = SubResource("SpriteFrames_t8r5d")
-animation = &"carimbado_1"
+animation = &"carimbado_2"
 autoplay = "default"
-frame_progress = 0.35126853
+frame_progress = 0.55624986
 
 [node name="Area2D" type="Area2D" parent="." unique_id=394455269 groups=["Papel"]]
 collision_mask = 2

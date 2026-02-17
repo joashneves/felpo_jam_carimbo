@@ -1,13 +1,20 @@
 extends Node2D
 
-@export var dano : int = 100;
+@export var dano : int = 1000;
 @export var pontos : int = -10;
 
 var velocidade : float = 200;
 var tocando : Node2D = null;
 var direcao = [0.05, -0.05, 0.07, -0.07].pick_random()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@onready var sprite_atual = $Sprite2D
+@onready var sprite_1 = load("res://Assets/Pizza/pizza.png")
+@onready var sprite_2 = load("res://Assets/Cookie/cookie.png")
+@onready var escolher_sprite = [sprite_1, sprite_2].pick_random()
+
+func _ready() -> void:
+	sprite_atual.texture = escolher_sprite;
+
 func _process(delta: float) -> void:
 	position.x -= velocidade * delta
 	if position.x < -64:
@@ -22,5 +29,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Carimbo"):
 		GameManager.diminui_minutos(dano * 60)
 		GameManager.contabilzar_pontos(pontos)
+		body.encostei_em_algo()
 		queue_free()
 		

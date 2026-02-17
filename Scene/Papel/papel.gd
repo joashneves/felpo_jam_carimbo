@@ -7,6 +7,7 @@ var carimbo_1 = load("res://Assets/Papel/pape_carimbadol.png");
 var carimbado : bool = false
 var tocando : Node2D = null;
 var direcao =  [0.05, -0.05, 0,0.07, -0.07].pick_random()
+var escolher_sprite = ["carimbado_1", "carimbado_2"].pick_random()
 var velocidade_em_y = [1,0, -1].pick_random()
 var mudar_de_direcao_em_x : float = 292.0
 signal papel;
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	rodando_o_papel()
 	if Input.is_action_pressed("carimbar") and tocando != null and carimbado == false:
 			GameManager.contabilzar_pontos([5,10,15].pick_random())
-			sprite_do_papel.play("carimbado_1")
+			sprite_do_papel.play(escolher_sprite)
 			carimbado = true
 			
 func rodando_o_papel():

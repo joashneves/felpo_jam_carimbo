@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dktv5i8a5bm57" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://mx2l5pspfu5h" path="res://Scene/Carimbo/Carimbo.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://dx2spmq6cw1v5" path="res://Scene/Pausa/pausa.tscn" id="2_fpfj3"]
 [ext_resource type="Texture2D" uid="uid://civn12d53ahbm" path="res://Assets/Background/Bg_animado/felpojam1.png" id="2_j4qnp"]
 [ext_resource type="PackedScene" uid="uid://b8o85g2sio284" path="res://Scene/Papel/Papel.tscn" id="2_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://de6oehmxbtb4m" path="res://Assets/Background/Bg_animado/felpojam2.png" id="3_fpfj3"]
@@ -80,6 +81,8 @@ papels_scene = ExtResource("2_uu6xs")
 [node name="GeradorDeObjeto" parent="." unique_id=485043465 instance=ExtResource("6_3dxm6")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=785799585]
+
+[node name="Pausa" parent="CanvasLayer" unique_id=1446812146 instance=ExtResource("2_fpfj3")]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=574483296]
 layout_mode = 3

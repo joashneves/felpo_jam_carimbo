@@ -16,18 +16,11 @@ func _ready() -> void:
 	pontuacao_atual.text = frase
 	pontuacao_maxima.text = frase_max
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_ir_menu_pressed() -> void:
 	get_tree().change_scene_to_packed(menu_cena)
 
-
 func _on_jogar_novamente_pressed() -> void:
 	get_tree().change_scene_to_packed(jogar_cena)
-
 
 func zerar_pontuacao():
 	var pontos_main = GameManager.pontos
