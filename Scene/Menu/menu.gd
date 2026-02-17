@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_iniciar_jogo_pressed() -> void:
 	get_tree().change_scene_to_packed(cena_jogo)
+
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()

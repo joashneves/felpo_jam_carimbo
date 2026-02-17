@@ -10,7 +10,8 @@ var direcao = [0.05, -0.05, 0.07, -0.07].pick_random()
 @onready var sprite_atual = $Sprite2D
 @onready var sprite_1 = load("res://Assets/Pizza/pizza.png")
 @onready var sprite_2 = load("res://Assets/Cookie/cookie.png")
-@onready var escolher_sprite = [sprite_1, sprite_2].pick_random()
+@onready var sprite_3 = load("res://Assets/Donaut/donut.png")
+@onready var escolher_sprite = [sprite_1, sprite_2, sprite_3].pick_random()
 
 func _ready() -> void:
 	sprite_atual.texture = escolher_sprite;
@@ -21,9 +22,15 @@ func _process(delta: float) -> void:
 		GameManager.contabilzar_pontos(20)
 		queue_free()
 	rodando_o_objeto()
+	verifica_velocidade_e_avanca()
 	
 func rodando_o_objeto():
 	rotation += direcao;
+
+func verifica_velocidade_e_avanca():
+	if position.x < 380:
+		if velocidade <= 60:
+			velocidade = 300
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Carimbo"):

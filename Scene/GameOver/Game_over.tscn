@@ -116,6 +116,23 @@ theme_override_font_sizes/font_size = 28
 text = "JOGAR NOVAMENTE"
 metadata/_edit_use_anchors_ = true
 
+[node name="SairDoJogo" type="Button" parent="CanvasLayer/Control" unique_id=116807260]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -30.098743
+anchor_top = 0.5983796
+anchor_right = 26.541485
+anchor_bottom = 0.5983796
+offset_left = -95.0
+offset_top = 50.0
+offset_right = 95.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "SAIR"
+metadata/_edit_use_anchors_ = true
+
 [node name="PontuacaoAtual" type="Label" parent="CanvasLayer/Control" unique_id=1843346278]
 layout_mode = 1
 anchors_preset = 8
@@ -154,3 +171,4 @@ text = "Sua Pontuação Maxima foi : 10"
 
 [connection signal="pressed" from="CanvasLayer/Control/Menu" to="." method="_on_ir_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/JogarNovamente" to="." method="_on_jogar_novamente_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SairDoJogo" to="." method="_on_sair_do_jogo_pressed"]

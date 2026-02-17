@@ -17,5 +17,7 @@ com os itens que não são usados juntos a um carimbo
 - [Sons de Carimbo](https://freesound.org/people/radwoc/sounds/256760/)
 - [Sons de Carimbo](https://freesound.org/people/kermite607/sounds/362623/)
 
+----------
+
 - [Tomando dano](https://freesound.org/people/OwlStorm/sounds/404747/)
 - [Tomando dano](https://freesound.org/people/stumpbutt/sounds/629664/)

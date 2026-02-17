@@ -21,10 +21,12 @@ func _on_ir_menu_pressed() -> void:
 
 func _on_jogar_novamente_pressed() -> void:
 	get_tree().change_scene_to_packed(jogar_cena)
+	
+func _on_sair_do_jogo_pressed() -> void:
+	get_tree().quit()
 
 func zerar_pontuacao():
 	var pontos_main = GameManager.pontos
 	if pontos_main > GameManager.maximo_de_pontos:
 		GameManager.maximo_de_pontos = pontos_main
 	GameManager.pontos = 0
-	

@@ -2,19 +2,10 @@ extends Node2D
 
 @export var objetos_a_serem_criados : PackedScene;
 var player_node : CharacterBody2D;
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func _on_timer_timeout() -> void:
 	gerador_de_objetos()
-
+	
 func gerador_de_objetos():
 	var level = GameManager.level
 	var objeto_instanca = objetos_a_serem_criados.instantiate()
@@ -40,7 +31,7 @@ func gerador_de_objetos():
 				objeto_instanca.velocidade = [100, 150,170, 200].pick_random() * GameManager.level;
 			else:
 				player_node = get_tree().get_first_node_in_group("Carimbo")
-				print("Carimbos esta em : "+ str(player_node.position))
+				#print("Carimbos esta em : "+ str(player_node.position))
 				objeto_instanca.position = Vector2(820, player_node.position.y )
 				objeto_instanca.velocidade = [100, 150,170, 200].pick_random() * GameManager.level;
 		5:
@@ -51,12 +42,12 @@ func gerador_de_objetos():
 				objeto_instanca.velocidade = [100, 150,170, 200].pick_random() * GameManager.level;
 			else:
 				player_node = get_tree().get_first_node_in_group("Carimbo")
-				print("Carimbos esta em : "+ str(player_node.position))
+				#print("Carimbos esta em : "+ str(player_node.position))
 				objeto_instanca.position = Vector2(820, player_node.position.y )
 				objeto_instanca.velocidade = [150,170, 200].pick_random() * GameManager.level;
 		6:
 			player_node = get_tree().get_first_node_in_group("Carimbo")
-			print("Carimbos esta em : "+ str(player_node.position))
+			#print("Carimbos esta em : "+ str(player_node.position))
 			objeto_instanca.position = Vector2(820, player_node.position.y )
 			objeto_instanca.velocidade = [150,170,200, 250].pick_random() * GameManager.level;
 		_:
