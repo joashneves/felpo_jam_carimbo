@@ -6,6 +6,9 @@ extends CharacterBody2D
 @export var sons_de_carimbo01 : AudioStreamPlayer;
 @export var sons_de_dano01 : AudioStreamPlayer;
 @export var sons_de_dano02 : AudioStreamPlayer;
+@export var sons_de_dano03 : AudioStreamPlayer;
+
+
 
 @onready var sprite_animation : AnimatedSprite2D = $Animation
 var tempo_de_recargar : float = 50;
@@ -46,8 +49,9 @@ func animacao_de_carimbar():
 	if Input.is_action_pressed("carimbar") and pode_carimbar:
 		pode_carimbar = false
 		sprite_animation.play("carimbo_classico",3,false)
-		var som_escolhido = [sons_de_carimbo00, sons_de_carimbo01].pick_random()
-		som_escolhido.play()
+		if randf_range(0, 100) < 50:
+			var som_escolhido = [sons_de_carimbo00, sons_de_carimbo01].pick_random()
+			som_escolhido.play()
 		tempo_atual_de_recargar = 0
 
 func encostei_em_algo() -> void:
@@ -57,3 +61,4 @@ func encostei_em_algo() -> void:
 
 func _on_animation_animation_finished() -> void:
 	sprite_animation.frame = 0
+	pode_carimbar = false;

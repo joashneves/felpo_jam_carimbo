@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mx2l5pspfu5h" path="res://Scene/Carimbo/Carimbo.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://dx2spmq6cw1v5" path="res://Scene/Pausa/pausa.tscn" id="2_fpfj3"]
 [ext_resource type="Texture2D" uid="uid://civn12d53ahbm" path="res://Assets/Background/Bg_animado/felpojam1.png" id="2_j4qnp"]
+[ext_resource type="Script" uid="uid://cjvotixtw4k7c" path="res://camera_2d.gd" id="2_sc1dx"]
 [ext_resource type="PackedScene" uid="uid://b8o85g2sio284" path="res://Scene/Papel/Papel.tscn" id="2_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://de6oehmxbtb4m" path="res://Assets/Background/Bg_animado/felpojam2.png" id="3_fpfj3"]
 [ext_resource type="PackedScene" uid="uid://11crq2tf6iox" path="res://Scene/Misc/GeradorDePapel/GeradorDePapel.tscn" id="3_r0du0"]
@@ -55,13 +56,14 @@ animations = [{
 [node name="Main" type="Node2D" unique_id=108141995]
 script = ExtResource("1_cm0pq")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1571491378]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1571491378 groups=["Camera"]]
 position = Vector2(384, 216)
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 limit_right = 768
 limit_bottom = 432
+script = ExtResource("2_sc1dx")
 
 [node name="BackgroundAnimado" type="AnimatedSprite2D" parent="." unique_id=127402161]
 z_index = -10

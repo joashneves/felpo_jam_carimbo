@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://blsf50ljrcs0k" path="res://Assets/Sons/Carimbo/256760__radwoc__piecz_15.wav" id="8_hl231"]
 [ext_resource type="AudioStream" uid="uid://brposab30exly" path="res://Assets/Sons/Carimbo/Dano/404747__owlstorm__retro-video-game-sfx-ouch.wav" id="9_vi5nw"]
 [ext_resource type="AudioStream" uid="uid://u0ambih075y7" path="res://Assets/Sons/Carimbo/Dano/629664__stumpbutt__retro-taking-damage-sfx2.wav" id="10_kymi7"]
+[ext_resource type="AudioStream" uid="uid://1iwkexitsjcd" path="res://Assets/Sons/Carimbo/213003__abstraktgeneriert__stamp.wav" id="15_d3wco"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdu4b"]
 animations = [{
@@ -69,7 +70,7 @@ size = Vector2(80, 66)
 [sub_resource type="CircleShape2D" id="CircleShape2D_rh1vq"]
 radius = 41.01219
 
-[node name="Carimbo" type="CharacterBody2D" unique_id=893954210 node_paths=PackedStringArray("sons_de_carimbo00", "sons_de_carimbo01", "sons_de_dano01", "sons_de_dano02") groups=["Carimbo"]]
+[node name="Carimbo" type="CharacterBody2D" unique_id=893954210 node_paths=PackedStringArray("sons_de_carimbo00", "sons_de_carimbo01", "sons_de_dano01", "sons_de_dano02", "sons_de_dano03") groups=["Carimbo"]]
 collision_layer = 2
 slide_on_ceiling = false
 script = ExtResource("1_rh1vq")
@@ -77,6 +78,7 @@ sons_de_carimbo00 = NodePath("Audio_grampo1")
 sons_de_carimbo01 = NodePath("Audio_grampo2")
 sons_de_dano01 = NodePath("Audio_dano1")
 sons_de_dano02 = NodePath("Audio_dano2")
+sons_de_dano03 = NodePath("Audio_grampo3")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1675495700]
 z_index = 4
@@ -104,6 +106,9 @@ stream = ExtResource("7_t1s2e")
 
 [node name="Audio_grampo2" type="AudioStreamPlayer" parent="." unique_id=1181862403]
 stream = ExtResource("8_hl231")
+
+[node name="Audio_grampo3" type="AudioStreamPlayer" parent="." unique_id=1146389574]
+stream = ExtResource("15_d3wco")
 
 [node name="Audio_dano1" type="AudioStreamPlayer" parent="." unique_id=550528493]
 stream = ExtResource("9_vi5nw")
