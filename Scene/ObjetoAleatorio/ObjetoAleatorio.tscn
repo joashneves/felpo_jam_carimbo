@@ -8,6 +8,7 @@ radius = 13.0
 
 [node name="ObjetoAleatorio" type="Node2D" unique_id=1051470891 groups=["Objetos"]]
 light_mask = 4
+z_index = 3
 script = ExtResource("1_prs7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=992511150]

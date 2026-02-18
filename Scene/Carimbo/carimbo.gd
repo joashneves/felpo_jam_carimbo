@@ -45,7 +45,7 @@ func verificar_se_pode_carimbar():
 func animacao_de_carimbar():
 	if Input.is_action_pressed("carimbar") and pode_carimbar:
 		pode_carimbar = false
-		sprite_animation.play("default",3,false)
+		sprite_animation.play("carimbo_classico",3,false)
 		var som_escolhido = [sons_de_carimbo00, sons_de_carimbo01].pick_random()
 		som_escolhido.play()
 		tempo_atual_de_recargar = 0

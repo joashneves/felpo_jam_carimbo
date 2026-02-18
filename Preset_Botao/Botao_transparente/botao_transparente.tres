@@ -1,0 +1,21 @@
+[gd_resource type="Theme" format=3 uid="uid://bruwdjoybw6be"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n6m58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqiyg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ptmm"]
+bg_color = Color(0.62352943, 0.5882353, 0.60784316, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqiyg"]
+
+[resource]
+/colors/color = Color(0, 0, 0, 0.37254903)
+Button/colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0.21176471)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/constants/outline_size = 5
+Button/styles/hover = SubResource("StyleBoxEmpty_n6m58")
+Button/styles/hover_mirrored = SubResource("StyleBoxFlat_bqiyg")
+Button/styles/normal = SubResource("StyleBoxFlat_0ptmm")
+Button/styles/pressed = SubResource("StyleBoxEmpty_bqiyg")

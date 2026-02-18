@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://ch50fsiycqrws" path="res://Scene/Carimbo/carimbo.gd" id="1_rh1vq"]
 [ext_resource type="Texture2D" uid="uid://b441iqqsde47l" path="res://Assets/Carimbo/Anim_carimbo/carimbo1.png" id="2_b4ech"]
+[ext_resource type="Texture2D" uid="uid://cmi0swbakqj3f" path="res://Assets/Carimbo/carimbo_classico/CARIMBO_CLASSIC1.png" id="2_h5bc0"]
+[ext_resource type="Texture2D" uid="uid://cqdyu4un0kd50" path="res://Assets/Carimbo/carimbo_classico/CARIMBO_CLASSIC2.png" id="3_d3wco"]
 [ext_resource type="Texture2D" uid="uid://dcul8ibc0srki" path="res://Assets/Carimbo/Anim_carimbo/carimbo2.png" id="3_t1s2e"]
 [ext_resource type="Texture2D" uid="uid://codfmwv5f8n5a" path="res://Assets/Carimbo/Anim_carimbo/carimbo3.png" id="4_hl231"]
+[ext_resource type="Texture2D" uid="uid://bbtsqbhyts3q1" path="res://Assets/Carimbo/carimbo_classico/CARIMBO_CLASSIC3.png" id="4_ixq63"]
+[ext_resource type="Texture2D" uid="uid://clefs25qdjxd7" path="res://Assets/Carimbo/carimbo_classico/CARIMBO_CLASSIC4.png" id="5_nbif5"]
 [ext_resource type="Texture2D" uid="uid://da88nmesp2g45" path="res://Assets/Carimbo/Anim_carimbo/carimbo4.png" id="5_vi5nw"]
 [ext_resource type="Texture2D" uid="uid://b6rvqsjqyxks3" path="res://Assets/Carimbo/Anim_carimbo/carimbo5.png" id="6_kymi7"]
+[ext_resource type="Texture2D" uid="uid://0hr8epp3ieo8" path="res://Assets/Carimbo/carimbo_classico/CARIMBO_CLASSIC5.png" id="6_sp72q"]
+[ext_resource type="Texture2D" uid="uid://ccp1cbbouaxnx" path="res://Assets/Carimbo/carimbo_classico/CARIMBO_CLASSIC6.png" id="7_d4vq7"]
 [ext_resource type="AudioStream" uid="uid://vereerd6gwe2" path="res://Assets/Sons/Carimbo/362623__kermite607__stamp.wav" id="7_t1s2e"]
 [ext_resource type="AudioStream" uid="uid://blsf50ljrcs0k" path="res://Assets/Sons/Carimbo/256760__radwoc__piecz_15.wav" id="8_hl231"]
 [ext_resource type="AudioStream" uid="uid://brposab30exly" path="res://Assets/Sons/Carimbo/Dano/404747__owlstorm__retro-video-game-sfx-ouch.wav" id="9_vi5nw"]
@@ -13,6 +19,29 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdu4b"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h5bc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d3wco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ixq63")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_nbif5")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_sp72q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d4vq7")
+}],
+"loop": false,
+"name": &"carimbo_classico",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_b4ech")
@@ -35,10 +64,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rh1vq"]
-size = Vector2(31, 66)
+size = Vector2(80, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rh1vq"]
-radius = 26.019224
+radius = 41.01219
 
 [node name="Carimbo" type="CharacterBody2D" unique_id=893954210 node_paths=PackedStringArray("sons_de_carimbo00", "sons_de_carimbo01", "sons_de_dano01", "sons_de_dano02") groups=["Carimbo"]]
 collision_layer = 2
@@ -51,14 +80,15 @@ sons_de_dano02 = NodePath("Audio_dano2")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1675495700]
 z_index = 4
-position = Vector2(-55, -57)
+position = Vector2(-83, -86)
 sprite_frames = SubResource("SpriteFrames_jdu4b")
+animation = &"carimbo_classico"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=153998082]
 light_mask = 0
 visibility_layer = 0
-position = Vector2(0.5, 1)
+position = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_rh1vq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2027703656 groups=["Carimbo"]]

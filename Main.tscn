@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b4t8cemuj52h" path="res://Assets/Background/Bg_animado/felpojam7.png" id="8_devvj"]
 [ext_resource type="Texture2D" uid="uid://cgwmh2y8pu6vx" path="res://Assets/Background/Bg_animado/felpojam8.png" id="9_3b0ty"]
 [ext_resource type="Texture2D" uid="uid://dvwsaowi1cgo7" path="res://Assets/Background/Bg_animado/felpojam9.png" id="10_bg4s2"]
+[ext_resource type="AudioStream" uid="uid://0vdukxloa6tn" path="res://Assets/Sons/Musicas/musica_batalha.wav" id="16_fpfj3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhcpw"]
 animations = [{
@@ -131,3 +132,10 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Musica_player" type="AudioStreamPlayer" parent="." unique_id=140551955]
+stream = ExtResource("16_fpfj3")
+volume_db = -28.743
+autoplay = true
+
+[connection signal="finished" from="Musica_player" to="." method="_on_musica_player_finished"]

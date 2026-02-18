@@ -3,8 +3,10 @@ extends Node2D
 @onready var label_de_pontos : Label = $CanvasLayer/Control/Pontos
 @onready var label_de_minutos : Label = $CanvasLayer/Control/Tempo
 
+@onready var tocador_de_musica : AudioStreamPlayer = $Musica_player
+
 func _ready() -> void:
-	pass # Replace with function body.
+	tocador_de_musica.play()
 	
 func _process(delta: float) -> void:
 	label_de_pontos.text = str(GameManager.pontos)
@@ -23,4 +25,6 @@ func _process(delta: float) -> void:
 	var time_string := "%02d:%02d" % [minutes, seconds]
 	label_de_minutos.text = time_string
 
-	
+
+func _on_musica_player_finished() -> void:
+	tocador_de_musica.play()

@@ -10,6 +10,18 @@
 [ext_resource type="Texture2D" uid="uid://dssaxe537ylw2" path="res://Assets/Papel/papel_auternativo_1/papel_variantel1.png" id="5_e8wym"]
 [ext_resource type="Texture2D" uid="uid://dcsmivfexbciu" path="res://Assets/Papel/papel_auternativo_1/papel_variantel2.png" id="6_ajbfy"]
 [ext_resource type="Texture2D" uid="uid://cifo3hured2vb" path="res://Assets/Papel/papel_auternativo_1/papel_variantel3.png" id="7_la47y"]
+[ext_resource type="Texture2D" uid="uid://lvsjd0urcw4" path="res://Assets/Papel/Papel_gatinho/papel_gatinhol1.png" id="8_ansx7"]
+[ext_resource type="Texture2D" uid="uid://2m2eiidrj4u" path="res://Assets/Papel/Papel_gatinho/papel_gatinhol2.png" id="9_8vefl"]
+[ext_resource type="Texture2D" uid="uid://bgmmtg0kh3m71" path="res://Assets/Papel/Papel_gatinho/papel_gatinhol3.png" id="10_vlm4x"]
+[ext_resource type="Texture2D" uid="uid://dqb76wos74d4a" path="res://Assets/Papel/Papel_undertale/undetale_paper1.png" id="11_0dnjd"]
+[ext_resource type="Texture2D" uid="uid://b21lw3u6vgjho" path="res://Assets/Papel/Papel_undertale/undetale_paper2.png" id="12_4si14"]
+[ext_resource type="Texture2D" uid="uid://cfo4r7lcisfyx" path="res://Assets/Papel/Papel_undertale/undetale_paper3.png" id="13_grfs0"]
+[ext_resource type="Texture2D" uid="uid://om1qg4vgu3t3" path="res://Assets/Papel/papel_uwu/uwu1.png" id="14_ma0it"]
+[ext_resource type="Texture2D" uid="uid://m8uu355etmh5" path="res://Assets/Papel/papel_uwu/uwu2.png" id="15_06db0"]
+[ext_resource type="Texture2D" uid="uid://c170d66kmrkqq" path="res://Assets/Papel/papel_uwu/uwu3.png" id="16_mm7te"]
+[ext_resource type="Texture2D" uid="uid://dua1b8i5c3pti" path="res://Assets/Papel/papel_animacao_1/folha_reta1.png" id="20_j5agv"]
+[ext_resource type="Texture2D" uid="uid://c8rbk4bu7nbh6" path="res://Assets/Papel/papel_animacao_1/folha_reta2.png" id="21_nma1o"]
+[ext_resource type="Texture2D" uid="uid://d2ymjuseb528a" path="res://Assets/Papel/papel_animacao_1/folha_reta3.png" id="22_5cb1x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8r5d"]
 animations = [{
@@ -43,6 +55,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_ansx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8vefl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vlm4x")
+}],
+"loop": true,
+"name": &"carimbado_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_0dnjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4si14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_grfs0")
+}],
+"loop": true,
+"name": &"carimbado_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ma0it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_06db0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mm7te")
+}],
+"loop": true,
+"name": &"carimbado_5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_7yn5b")
 }, {
 "duration": 1.0,
@@ -53,6 +107,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_j5agv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nma1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5cb1x")
+}],
+"loop": true,
+"name": &"default_1",
 "speed": 5.0
 }]
 
@@ -66,9 +134,8 @@ script = ExtResource("1_p8iyx")
 
 [node name="AnimationSprite" type="AnimatedSprite2D" parent="." unique_id=576327277]
 sprite_frames = SubResource("SpriteFrames_t8r5d")
-animation = &"carimbado_2"
+animation = &"default_1"
 autoplay = "default"
-frame_progress = 0.55624986
 
 [node name="Area2D" type="Area2D" parent="." unique_id=394455269 groups=["Papel"]]
 collision_mask = 2

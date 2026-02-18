@@ -9,7 +9,7 @@ var carimbo_1 = load("res://Assets/Papel/pape_carimbadol.png");
 var carimbado : bool = false
 var tocando : Node2D = null;
 var direcao =  [0.05, -0.05, 0,0.07, -0.07].pick_random()
-var escolher_sprite = ["carimbado_1", "carimbado_2"].pick_random()
+var escolher_sprite = ["carimbado_1", "carimbado_2", "carimbado_3", "carimbado_4", "carimbado_5"].pick_random()
 var velocidade_em_y = [1,0, -1].pick_random()
 var velocidade_dificuldade = 20;
 var mudar_de_direcao_em_x : float = 292.0
@@ -19,6 +19,8 @@ func _ready() -> void:
 	var level_do_jogo = GameManager.level
 	if level_do_jogo >= 4:
 		velocidade_dificuldade = [20, 40, 100, 200].pick_random()
+	if escolher_sprite == "carimbado_4" or escolher_sprite == "carimbado_5":
+		sprite_do_papel.play("default_1")
 		
 
 func _process(delta: float) -> void:

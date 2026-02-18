@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c75412lhfi7kn" path="res://Scene/GameOver/game_over.gd" id="1_vb268"]
 [ext_resource type="PackedScene" uid="uid://1wjhvpfv6scb" path="res://Scene/Menu/Menu.tscn" id="2_erkmu"]
 [ext_resource type="PackedScene" uid="uid://cssm7lytq2jnb" path="res://Main.tscn" id="3_f2kws"]
+[ext_resource type="AudioStream" uid="uid://dpo7jmmvcf1rq" path="res://Assets/Sons/Musicas/musica_final.wav" id="4_44xot"]
 [ext_resource type="Texture2D" uid="uid://civn12d53ahbm" path="res://Assets/Background/Bg_animado/felpojam1.png" id="4_rjfne"]
 [ext_resource type="Texture2D" uid="uid://de6oehmxbtb4m" path="res://Assets/Background/Bg_animado/felpojam2.png" id="5_44xot"]
 [ext_resource type="Texture2D" uid="uid://bpctrv22pgyh1" path="res://Assets/Background/Bg_animado/felpojam3.png" id="6_sp51i"]
@@ -53,6 +54,11 @@ script = ExtResource("1_vb268")
 menu_cena = ExtResource("2_erkmu")
 jogar_cena = ExtResource("3_f2kws")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1945736964]
+stream = ExtResource("4_44xot")
+volume_db = -27.368
+autoplay = true
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1081571056]
 position = Vector2(384, 216)
 zoom = Vector2(2, 2)
@@ -83,35 +89,37 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Button" parent="CanvasLayer/Control" unique_id=183992731]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+anchors_preset = -1
+anchor_left = -25.541485
+anchor_top = 0.4994213
+anchor_right = -25.541485
+anchor_bottom = 0.4994213
+offset_left = -102.0
+offset_top = -23.5
+offset_right = 175.0
+offset_bottom = 28.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "IR PARA MENU"
+text = "IR PARA O MENU"
 metadata/_edit_use_anchors_ = true
 
 [node name="JogarNovamente" type="Button" parent="CanvasLayer/Control" unique_id=257043424]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = -30.098743
+anchor_top = 0.505787
+anchor_right = 26.541485
+anchor_bottom = 0.505787
 offset_left = -95.0
 offset_top = 50.0
 offset_right = 95.0
-offset_bottom = 97.0
+offset_bottom = 102.00003
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 28
 text = "JOGAR NOVAMENTE"
 metadata/_edit_use_anchors_ = true
@@ -126,9 +134,10 @@ anchor_bottom = 0.5983796
 offset_left = -95.0
 offset_top = 50.0
 offset_right = 95.0
-offset_bottom = 97.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 28
 text = "SAIR"
 metadata/_edit_use_anchors_ = true
@@ -169,6 +178,7 @@ theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 28
 text = "Sua Pontuação Maxima foi : 10"
 
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/Control/Menu" to="." method="_on_ir_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/JogarNovamente" to="." method="_on_jogar_novamente_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/SairDoJogo" to="." method="_on_sair_do_jogo_pressed"]

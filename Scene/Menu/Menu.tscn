@@ -2,50 +2,114 @@
 
 [ext_resource type="Script" uid="uid://q23gsg5nw1y" path="res://Scene/Menu/menu.gd" id="1_mw8f1"]
 [ext_resource type="PackedScene" uid="uid://cssm7lytq2jnb" path="res://Main.tscn" id="2_plaiv"]
-[ext_resource type="Texture2D" uid="uid://civn12d53ahbm" path="res://Assets/Background/Bg_animado/felpojam1.png" id="3_je64r"]
-[ext_resource type="Texture2D" uid="uid://de6oehmxbtb4m" path="res://Assets/Background/Bg_animado/felpojam2.png" id="4_gwknt"]
-[ext_resource type="Texture2D" uid="uid://bpctrv22pgyh1" path="res://Assets/Background/Bg_animado/felpojam3.png" id="5_htnpo"]
-[ext_resource type="Texture2D" uid="uid://b7mdfh4xdxbsm" path="res://Assets/Background/Bg_animado/felpojam4.png" id="6_5hite"]
-[ext_resource type="Texture2D" uid="uid://e010a52xhgca" path="res://Assets/Background/Bg_animado/felpojam5.png" id="7_r2t0e"]
-[ext_resource type="Texture2D" uid="uid://big4qbehtt6ld" path="res://Assets/Background/Bg_animado/felpojam6.png" id="8_5cyot"]
-[ext_resource type="Texture2D" uid="uid://b4t8cemuj52h" path="res://Assets/Background/Bg_animado/felpojam7.png" id="9_20snb"]
-[ext_resource type="Texture2D" uid="uid://cgwmh2y8pu6vx" path="res://Assets/Background/Bg_animado/felpojam8.png" id="10_duvdl"]
-[ext_resource type="Texture2D" uid="uid://dvwsaowi1cgo7" path="res://Assets/Background/Bg_animado/felpojam9.png" id="11_q4imi"]
+[ext_resource type="Texture2D" uid="uid://dtrvrmjtxf37u" path="res://Assets/Background/LETRA.png" id="3_htnpo"]
+[ext_resource type="Theme" uid="uid://bruwdjoybw6be" path="res://Preset_Botao/Botao_transparente/botao_transparente.tres" id="3_mgesq"]
+[ext_resource type="Texture2D" uid="uid://dtxikucat8gal" path="res://Assets/Background/exit.png" id="4_0ptmm"]
+[ext_resource type="AudioStream" uid="uid://cumvbjhcoof0" path="res://Assets/Sons/Musicas/Menu/musica_menu.wav" id="5_ffypu"]
+[ext_resource type="Texture2D" uid="uid://clfaw5ffkxxtu" path="res://Assets/Background/TelaDeinicio/felpojam_page.png" id="12_gwknt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ivylu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_je64r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_gwknt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_htnpo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_5hite")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_r2t0e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_5cyot")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_20snb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_duvdl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_q4imi")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
+[sub_resource type="Animation" id="Animation_mgesq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Letra:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Exit:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FUNDO:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(384, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FUNDO:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(337, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_4rlbn"]
+resource_name = "comecar_jogo"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Letra:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Exit:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0),
+"points": PackedFloat32Array(48, -0.25, 0, 0.25, 0, 48, -0.016666668, 0, 0, 0, -161, -0.15, 34.833336, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FUNDO:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(384, -0.25, 0, 0.25, 0, 384, -0.06666667, 0, 0, 0),
+"times": PackedFloat32Array(0.1, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FUNDO:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(337, -0.25, 0, 0.25, 0, 95.00001, -0.06666667, 40.333336, 0, 0),
+"times": PackedFloat32Array(0.1, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dvdpk"]
+_data = {
+&"RESET": SubResource("Animation_mgesq"),
+&"comecar_jogo": SubResource("Animation_4rlbn")
+}
 
 [node name="Menu" type="Node2D" unique_id=1625415937]
 script = ExtResource("1_mw8f1")
@@ -74,62 +138,112 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Iniciar" type="Button" parent="CanvasLayer/Control" unique_id=2052657499]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = -118.63979
+anchor_top = 0.27199075
+anchor_right = -52.234005
+anchor_bottom = 0.31712964
 offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3.59506, 3.7439706)
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_mgesq")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "INICIAR"
 metadata/_edit_use_anchors_ = true
 
 [node name="Manual" type="Button" parent="CanvasLayer/Control" unique_id=1110480479]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 294.76883
+anchor_top = 0.1863426
+anchor_right = 294.76883
+anchor_bottom = 0.1863426
 offset_left = -95.0
 offset_top = 50.0
 offset_right = 95.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.8516932, 2.3144908)
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_mgesq")
 theme_override_font_sizes/font_size = 28
-text = "COMO JOGAR"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sair" type="Button" parent="CanvasLayer/Control" unique_id=153989718]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5914352
-anchor_right = 0.5
-anchor_bottom = 0.5914352
+anchor_left = 339.0393
+anchor_top = -0.03935185
+anchor_right = 339.0393
+anchor_bottom = -0.03935185
 offset_left = -95.0
 offset_top = 50.0
 offset_right = 95.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.4815588, 3.5734863)
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_mgesq")
 theme_override_font_sizes/font_size = 28
-text = "SAIR"
 metadata/_edit_use_anchors_ = true
 
-[node name="BackgroundAnimado" type="AnimatedSprite2D" parent="." unique_id=548269713]
-z_index = -10
-position = Vector2(384, 216)
-sprite_frames = SubResource("SpriteFrames_ivylu")
-autoplay = "default"
-frame_progress = 0.81808037
+[node name="Creditos" type="Button" parent="CanvasLayer/Control" unique_id=1368441300]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -345.85175
+anchor_top = 0.43981478
+anchor_right = -345.85175
+anchor_bottom = 0.43981478
+offset_left = -95.0
+offset_top = 50.0
+offset_right = 95.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3245038, 1.4737816)
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_mgesq")
+theme_override_font_sizes/font_size = 28
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="FelpojamPage" type="Sprite2D" parent="." unique_id=1916430576]
+visible = false
+position = Vector2(769, 679)
+scale = Vector2(2, 2)
+texture = ExtResource("12_gwknt")
+
+[node name="FUNDO" type="Sprite2D" parent="." unique_id=287072654]
+position = Vector2(384, 337)
+texture = ExtResource("12_gwknt")
+
+[node name="Exit" type="Sprite2D" parent="." unique_id=1568628824]
+position = Vector2(665, 48)
+texture = ExtResource("4_0ptmm")
+
+[node name="Letra" type="Sprite2D" parent="." unique_id=1503749457]
+position = Vector2(388, 154)
+texture = ExtResource("3_htnpo")
+
+[node name="MusicaQueEuFizCommuitocarinho" type="AudioStreamPlayer" parent="." unique_id=2104711251]
+stream = ExtResource("5_ffypu")
+volume_db = -14.956
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1327508001]
+root_node = NodePath("../Camera2D")
+libraries/ = SubResource("AnimationLibrary_dvdpk")
 
 [connection signal="pressed" from="CanvasLayer/Control/Iniciar" to="." method="_on_iniciar_jogo_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Creditos" to="." method="_on_sair_pressed"]
+[connection signal="finished" from="MusicaQueEuFizCommuitocarinho" to="." method="_on_musica_que_eu_fiz_commuitocarinho_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -30,3 +30,7 @@ func zerar_pontuacao():
 	if pontos_main > GameManager.maximo_de_pontos:
 		GameManager.maximo_de_pontos = pontos_main
 	GameManager.pontos = 0
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()
