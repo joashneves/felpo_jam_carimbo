@@ -3,9 +3,11 @@ extends Node2D
 @export var velocidade : float = 200
 
 @onready var sprite_do_papel : AnimatedSprite2D = $AnimationSprite
+@onready var pontos_flutuante : PackedScene = load("res://Scene/Pontos/Pontos.tscn")
 @export var max_y = 400;
 @export var min_y = 0;
 var carimbo_1 = load("res://Assets/Papel/pape_carimbadol.png");
+
 var carimbado : bool = false
 var tocando : Node2D = null;
 var direcao =  [0.05, -0.05, 0,0.07, -0.07].pick_random()
@@ -36,9 +38,16 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	rodando_o_papel()
 	if Input.is_action_pressed("carimbar") and tocando != null and carimbado == false:
-			GameManager.contabilzar_pontos([5,10,15].pick_random())
-			sprite_do_papel.play(escolher_sprite)
-			carimbado = true
+		var pontos_aleatorios = [5,10,15].pick_random()
+		GameManager.contabilzar_pontos(pontos_aleatorios)
+		sprite_do_papel.play(escolher_sprite)
+		carimbado = true
+		var pontos = pontos_flutuante.instantiate()
+		pontos.quantidade_dos_pontos = pontos_aleatorios
+		pontos.position.x = position.x
+		pontos.position.y = position.y
+		if get_tree() != null:
+			get_tree().root.add_child(pontos)
 
 func papel_bate_na_parede():
 	if position.y <= min_y || position.y >= max_y:
