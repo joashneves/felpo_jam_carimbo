@@ -11,8 +11,8 @@ var temp_pontos : int = GameManager.pontos;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	zerar_pontuacao()
-	var frase = str("Sua Pontuação foi : " + str(temp_pontos))
-	var frase_max = str("Sua Pontuação maxima foi : " + str(GameManager.maximo_de_pontos))
+	var frase = str("Sua pontuação foi : " + str(temp_pontos))
+	var frase_max = str("Sua pontuação maxima foi : " + str(GameManager.maximo_de_pontos))
 	pontuacao_atual.text = frase
 	pontuacao_maxima.text = frase_max
 

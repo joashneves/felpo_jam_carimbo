@@ -8,7 +8,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	verfica_ponto(quantidade_dos_pontos)
-
+	$AnimationPlayer.play("sumindo")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,10 +17,10 @@ func _process(delta: float) -> void:
 func verfica_ponto(pontos) -> void:
 	if pontos < 0:
 		label_texto.text = str(+pontos)
-		label_texto.add_theme_color_override("font_color", Color(129.359, 0.219, 0.077, 1.0) )
+		label_texto.add_theme_color_override("font_color", Color("bc123eff") )
 	else:
 		label_texto.text = str(pontos)
-		label_texto.add_theme_color_override("font_color", Color(0.0, 44.299, 0.0, 1.0) )
+		label_texto.add_theme_color_override("font_color", Color("25b553ff") )
 
 func voa_meio_fluante(delta):
 	if quantidade_dos_pontos >= 0:

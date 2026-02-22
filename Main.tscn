@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cgwmh2y8pu6vx" path="res://Assets/Background/Bg_animado/felpojam8.png" id="9_3b0ty"]
 [ext_resource type="Texture2D" uid="uid://dvwsaowi1cgo7" path="res://Assets/Background/Bg_animado/felpojam9.png" id="10_bg4s2"]
 [ext_resource type="AudioStream" uid="uid://0vdukxloa6tn" path="res://Assets/Sons/Musicas/musica_batalha.wav" id="16_fpfj3"]
+[ext_resource type="FontFile" uid="uid://ju70vj1gtel4" path="res://Assets/Font/pixel_twist/PixelTwist.ttf" id="17_kjvhd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhcpw"]
 animations = [{
@@ -110,6 +111,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("17_kjvhd")
 theme_override_font_sizes/font_size = 28
 text = "00:00"
 horizontal_alignment = 1
@@ -129,6 +131,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("17_kjvhd")
 theme_override_font_sizes/font_size = 28
 text = "0"
 horizontal_alignment = 1

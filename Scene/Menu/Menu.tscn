@@ -2,18 +2,63 @@
 
 [ext_resource type="Script" uid="uid://q23gsg5nw1y" path="res://Scene/Menu/menu.gd" id="1_mw8f1"]
 [ext_resource type="PackedScene" uid="uid://cssm7lytq2jnb" path="res://Main.tscn" id="2_plaiv"]
-[ext_resource type="Texture2D" uid="uid://dtrvrmjtxf37u" path="res://Assets/Background/LETRA.png" id="3_htnpo"]
 [ext_resource type="Theme" uid="uid://bruwdjoybw6be" path="res://Preset_Botao/Botao_transparente/botao_transparente.tres" id="3_mgesq"]
-[ext_resource type="Texture2D" uid="uid://dtxikucat8gal" path="res://Assets/Background/exit.png" id="4_0ptmm"]
+[ext_resource type="Script" uid="uid://cfckv2vtdevmf" path="res://Scene/Menu/como_jogar.gd" id="4_5cyot"]
+[ext_resource type="Texture2D" uid="uid://cv43w0swtaqa0" path="res://Assets/Como jogar/S.png" id="4_5hite"]
 [ext_resource type="AudioStream" uid="uid://cumvbjhcoof0" path="res://Assets/Sons/Musicas/Menu/musica_menu.wav" id="5_ffypu"]
+[ext_resource type="Texture2D" uid="uid://b7ni3n4r8soud" path="res://Assets/Background/exit_animacao1.png" id="5_je64r"]
+[ext_resource type="Texture2D" uid="uid://cwgq17ybis5bl" path="res://Assets/Como jogar/W.png" id="5_r2t0e"]
+[ext_resource type="Texture2D" uid="uid://c4k671hhhpxkm" path="res://Assets/Como jogar/SPACE.png" id="6_5cyot"]
+[ext_resource type="Texture2D" uid="uid://d10vtd71epqnj" path="res://Assets/Background/exit_animacao2.png" id="6_je64r"]
+[ext_resource type="Texture2D" uid="uid://cujqeq32tsycb" path="res://Assets/Background/Letra/LETRA_animacao1.png" id="6_msr7h"]
+[ext_resource type="Texture2D" uid="uid://b2uh5ctylxpi1" path="res://Assets/Background/Letra/LETRA_animacao2.png" id="7_je64r"]
+[ext_resource type="FontFile" uid="uid://846in46d1d33" path="res://Assets/Font/pixel_digivolve/Pixel Digivolve.otf" id="7_r2t0e"]
+[ext_resource type="Texture2D" uid="uid://buspos04e6ljm" path="res://Assets/Background/Letra/LETRA_animacao3.png" id="8_gwknt"]
+[ext_resource type="Texture2D" uid="uid://b47thywmdayel" path="res://Assets/Background/Letra/LETRA_animacao4.png" id="9_htnpo"]
 [ext_resource type="Texture2D" uid="uid://clfaw5ffkxxtu" path="res://Assets/Background/TelaDeinicio/felpojam_page.png" id="12_gwknt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwknt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_je64r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_je64r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hite"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_msr7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_je64r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gwknt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_htnpo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mgesq"]
 
 [sub_resource type="Animation" id="Animation_mgesq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Letra:visible")
+tracks/0/path = NodePath("../Letras:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -55,14 +100,26 @@ tracks/3/keys = {
 "points": PackedFloat32Array(337, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_4rlbn"]
 resource_name = "comecar_jogo"
-length = 2.2
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Letra:visible")
+tracks/0/path = NodePath("../Letras:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -104,6 +161,18 @@ tracks/3/keys = {
 "points": PackedFloat32Array(337, -0.25, 0, 0.25, 0, 95.00001, -0.06666667, 40.333336, 0, 0),
 "times": PackedFloat32Array(0.1, 2)
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.78431374)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dvdpk"]
 _data = {
@@ -125,7 +194,7 @@ limit_bottom = 432
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=968453806]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=2080052820]
+[node name="ControlMain" type="Control" parent="CanvasLayer" unique_id=2080052820]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -136,46 +205,46 @@ offset_bottom = 864.0
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Iniciar" type="Button" parent="CanvasLayer/Control" unique_id=2052657499]
+[node name="ComoJogar" type="Button" parent="CanvasLayer/ControlMain" unique_id=1612681625]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 553.0795
+anchor_top = 0.17592593
+anchor_right = 553.0795
+anchor_bottom = 0.17592594
+offset_left = -520.768
+offset_top = 34.0
+offset_right = -330.768
+offset_bottom = 80.999985
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.0083983, 3.1873302)
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_mgesq")
+theme_override_font_sizes/font_size = 28
+metadata/_edit_use_anchors_ = true
+
+[node name="Iniciar" type="Button" parent="CanvasLayer/ControlMain" unique_id=2052657499]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -118.63979
 anchor_top = 0.27199075
 anchor_right = -52.234005
-anchor_bottom = 0.31712964
+anchor_bottom = 0.2890083
 offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3.59506, 3.7439706)
+scale = Vector2(3.59506, 7.7874594)
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_mgesq")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 metadata/_edit_use_anchors_ = true
 
-[node name="Manual" type="Button" parent="CanvasLayer/Control" unique_id=1110480479]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 294.76883
-anchor_top = 0.1863426
-anchor_right = 294.76883
-anchor_bottom = 0.1863426
-offset_left = -95.0
-offset_top = 50.0
-offset_right = 95.0
-offset_bottom = 97.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.8516932, 2.3144908)
-mouse_default_cursor_shape = 2
-theme = ExtResource("3_mgesq")
-theme_override_font_sizes/font_size = 28
-metadata/_edit_use_anchors_ = true
-
-[node name="Sair" type="Button" parent="CanvasLayer/Control" unique_id=153989718]
+[node name="Sair" type="Button" parent="CanvasLayer/ControlMain" unique_id=153989718]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 339.0393
@@ -194,7 +263,7 @@ theme = ExtResource("3_mgesq")
 theme_override_font_sizes/font_size = 28
 metadata/_edit_use_anchors_ = true
 
-[node name="Creditos" type="Button" parent="CanvasLayer/Control" unique_id=1368441300]
+[node name="Creditos" type="Button" parent="CanvasLayer/ControlMain" unique_id=1368441300]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -345.85175
@@ -215,8 +284,81 @@ text = "
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="ComoJogarControle" type="Control" parent="CanvasLayer" unique_id=538547881]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_5cyot")
+onda_intensidade = 1.2
+onda_duracao = 0.3
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ComoJogarControle" unique_id=1673020541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.00003
+offset_top = -166.0
+offset_right = -314.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(26.323072, 16.676914)
+
+[node name="S" type="Sprite2D" parent="CanvasLayer/ComoJogarControle" unique_id=1083091141]
+position = Vector2(394, 406)
+scale = Vector2(2, 2)
+texture = ExtResource("4_5hite")
+
+[node name="W" type="Sprite2D" parent="CanvasLayer/ComoJogarControle" unique_id=1456194242]
+position = Vector2(582, 390)
+scale = Vector2(2, 2)
+texture = ExtResource("5_r2t0e")
+
+[node name="Space" type="Sprite2D" parent="CanvasLayer/ComoJogarControle" unique_id=1907288323]
+position = Vector2(1164, 395)
+scale = Vector2(2, 2)
+texture = ExtResource("6_5cyot")
+
+[node name="SairDeComoJogar" type="Button" parent="CanvasLayer/ComoJogarControle" unique_id=1519453319]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 611.0
+offset_right = 747.0
+offset_bottom = 658.0
+scale = Vector2(3.6096623, 2.2493575)
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("7_r2t0e")
+theme_override_font_sizes/font_size = 28
+text = "SAIR"
+
+[node name="carimbar" type="Label" parent="CanvasLayer/ComoJogarControle" unique_id=36505187]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 294.0
+offset_right = 1281.0
+offset_bottom = 328.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_r2t0e")
+theme_override_font_sizes/font_size = 28
+text = "CARIMBAR"
+horizontal_alignment = 1
+
+[node name="Movimentacao" type="Label" parent="CanvasLayer/ComoJogarControle" unique_id=91944630]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 294.0
+offset_right = 606.0
+offset_bottom = 328.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_r2t0e")
+theme_override_font_sizes/font_size = 28
+text = "MOVIMENTAÇÃO"
+
 [node name="FelpojamPage" type="Sprite2D" parent="." unique_id=1916430576]
-visible = false
 position = Vector2(769, 679)
 scale = Vector2(2, 2)
 texture = ExtResource("12_gwknt")
@@ -225,25 +367,33 @@ texture = ExtResource("12_gwknt")
 position = Vector2(384, 337)
 texture = ExtResource("12_gwknt")
 
-[node name="Exit" type="Sprite2D" parent="." unique_id=1568628824]
+[node name="Exit" type="AnimatedSprite2D" parent="." unique_id=1053873177]
 position = Vector2(665, 48)
-texture = ExtResource("4_0ptmm")
+sprite_frames = SubResource("SpriteFrames_gwknt")
 
-[node name="Letra" type="Sprite2D" parent="." unique_id=1503749457]
-position = Vector2(388, 154)
-texture = ExtResource("3_htnpo")
+[node name="Letras" type="AnimatedSprite2D" parent="." unique_id=1941240389]
+position = Vector2(365, 141)
+sprite_frames = SubResource("SpriteFrames_5hite")
 
 [node name="MusicaQueEuFizCommuitocarinho" type="AudioStreamPlayer" parent="." unique_id=2104711251]
 stream = ExtResource("5_ffypu")
 volume_db = -14.956
 autoplay = true
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=867739272]
+modulate = Color(0, 0, 0, 0)
+position = Vector2(384.75, 291.25)
+scale = Vector2(770.5, 583.5)
+texture = SubResource("CanvasTexture_mgesq")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1327508001]
 root_node = NodePath("../Camera2D")
 libraries/ = SubResource("AnimationLibrary_dvdpk")
 
-[connection signal="pressed" from="CanvasLayer/Control/Iniciar" to="." method="_on_iniciar_jogo_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Sair" to="." method="_on_sair_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Creditos" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlMain/ComoJogar" to="." method="_on_como_jogar_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlMain/Iniciar" to="." method="_on_iniciar_jogo_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlMain/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlMain/Creditos" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/ComoJogarControle/SairDeComoJogar" to="." method="_on_sair_de_como_jogar_pressed"]
 [connection signal="finished" from="MusicaQueEuFizCommuitocarinho" to="." method="_on_musica_que_eu_fiz_commuitocarinho_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

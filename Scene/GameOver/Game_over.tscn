@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://b4t8cemuj52h" path="res://Assets/Background/Bg_animado/felpojam7.png" id="10_211mt"]
 [ext_resource type="Texture2D" uid="uid://cgwmh2y8pu6vx" path="res://Assets/Background/Bg_animado/felpojam8.png" id="11_lj60c"]
 [ext_resource type="Texture2D" uid="uid://dvwsaowi1cgo7" path="res://Assets/Background/Bg_animado/felpojam9.png" id="12_tyjri"]
+[ext_resource type="Script" uid="uid://cuxl33eb5wkyp" path="res://Scene/GameOver/control_game_over.gd" id="14_jyakm"]
+[ext_resource type="FontFile" uid="uid://846in46d1d33" path="res://Assets/Font/pixel_digivolve/Pixel Digivolve.otf" id="14_sp51i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_umx57"]
 animations = [{
@@ -85,6 +87,9 @@ offset_left = -0.7680054
 offset_right = 0.7680054
 offset_bottom = 864.0
 grow_horizontal = 2
+script = ExtResource("14_jyakm")
+onda_intensidade = 1.2
+onda_duracao = 0.3
 metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Button" parent="CanvasLayer/Control" unique_id=183992731]
@@ -102,6 +107,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_sp51i")
 theme_override_font_sizes/font_size = 28
 text = "IR PARA O MENU"
 metadata/_edit_use_anchors_ = true
@@ -120,6 +126,7 @@ offset_bottom = 102.00003
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("14_sp51i")
 theme_override_font_sizes/font_size = 28
 text = "JOGAR NOVAMENTE"
 metadata/_edit_use_anchors_ = true
@@ -138,6 +145,7 @@ offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("14_sp51i")
 theme_override_font_sizes/font_size = 28
 text = "SAIR"
 metadata/_edit_use_anchors_ = true
@@ -157,6 +165,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("14_sp51i")
 theme_override_font_sizes/font_size = 28
 text = "Sua Pontuação foi : 10"
 
@@ -175,6 +184,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("14_sp51i")
 theme_override_font_sizes/font_size = 28
 text = "Sua Pontuação Maxima foi : 10"
 

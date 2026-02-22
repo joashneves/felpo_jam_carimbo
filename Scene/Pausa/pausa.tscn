@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx2spmq6cw1v5"]
 
 [ext_resource type="Script" uid="uid://be7ctpjh546en" path="res://Scene/Pausa/pausa.gd" id="1_xq3g6"]
+[ext_resource type="FontFile" uid="uid://846in46d1d33" path="res://Assets/Font/pixel_digivolve/Pixel Digivolve.otf" id="2_awpij"]
 
 [sub_resource type="Animation" id="Animation_awpij"]
 length = 0.001
@@ -124,6 +125,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_awpij")
 theme_override_font_sizes/font_size = 28
 text = "Pausado"
 horizontal_alignment = 1

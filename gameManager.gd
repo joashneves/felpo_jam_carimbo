@@ -2,8 +2,8 @@ extends Node2D
 
 var level : int = 1
 var pontos : int = 0
-var minutos : int = 300000
-var minutos_max : int = 300000
+var minutos : int = 300150
+var minutos_max : int = 300150
 var maximo_de_pontos : int = 0
 
 @onready var cena_game_over : PackedScene = load("res://Scene/GameOver/Game_over.tscn");

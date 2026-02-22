@@ -13,6 +13,7 @@ var tocando : Node2D = null;
 var direcao =  [0.05, -0.05, 0,0.07, -0.07].pick_random()
 var escolher_sprite = ["carimbado_1", "carimbado_2", "carimbado_3", "carimbado_4", "carimbado_5"].pick_random()
 var velocidade_em_y = [1,0, -1].pick_random()
+var chance_de_ser_chato : float = randf_range(0, 100)
 var velocidade_dificuldade = 20;
 var mudar_de_direcao_em_x : float = 292.0
 signal papel;
@@ -29,12 +30,19 @@ func _process(delta: float) -> void:
 	position.x -= velocidade * delta
 	if GameManager.level > 3:
 		position.y -= (velocidade_dificuldade * velocidade_em_y) * delta
+	if GameManager.level > 4:
+		dificuldade(delta, get_tree().get_first_node_in_group("Carimbo"))
 	if position.x < -64:
 		GameManager.passou_papel(carimbado)
 		queue_free()
 	papel_bate_na_parede()
 	
-	
+func dificuldade(delta, player):
+	if player != null:
+		if chance_de_ser_chato > 50:
+			if position.y > player.position.y:
+				velocidade_em_y = velocidade_em_y * -1
+
 func _physics_process(delta: float) -> void:
 	rodando_o_papel()
 	if Input.is_action_pressed("carimbar") and tocando != null and carimbado == false:
