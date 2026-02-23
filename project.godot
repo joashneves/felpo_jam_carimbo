@@ -28,6 +28,7 @@ window/size/viewport_height=864
 
 folder_colors={
 "res://Assets/": "blue",
+"res://Preset_Botao/": "yellow",
 "res://Scene/": "purple"
 }
 
@@ -37,6 +38,7 @@ Papel=""
 Carimbo=""
 Objetos=""
 Camera="Grupo da camera"
+Tesoura=""
 
 [input]
 

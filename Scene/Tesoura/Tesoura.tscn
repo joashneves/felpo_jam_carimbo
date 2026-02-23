@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://gfc70uoeir34"]
+
+[ext_resource type="Texture2D" uid="uid://ctynkx5g5gffv" path="res://Assets/Tesoura/tesoura1.png" id="1_18pu2"]
+[ext_resource type="Script" uid="uid://d2ig7nipjnc2d" path="res://Scene/Tesoura/tesoura.gd" id="1_44wra"]
+[ext_resource type="Texture2D" uid="uid://e2we8vyo8i5x" path="res://Assets/Tesoura/tesoura2.png" id="2_44wra"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ylfu1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_18pu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_44wra")
+}],
+"loop": true,
+"name": &"tesoura",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0bmy"]
+size = Vector2(72, 20)
+
+[node name="Tesoura" type="Node2D" unique_id=151895704 groups=["Tesoura"]]
+script = ExtResource("1_44wra")
+
+[node name="TesouraAnimation" type="AnimatedSprite2D" parent="." unique_id=1822830432]
+light_mask = 7
+visibility_layer = 7
+scale = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_ylfu1")
+animation = &"tesoura"
+autoplay = "tesoura"
+frame_progress = 0.7802872
+
+[node name="Area2D" type="Area2D" parent="." unique_id=655668837 groups=["Tesoura"]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1673575476]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_r0bmy")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

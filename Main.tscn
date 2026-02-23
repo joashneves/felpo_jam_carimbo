@@ -16,8 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://b4t8cemuj52h" path="res://Assets/Background/Bg_animado/felpojam7.png" id="8_devvj"]
 [ext_resource type="Texture2D" uid="uid://cgwmh2y8pu6vx" path="res://Assets/Background/Bg_animado/felpojam8.png" id="9_3b0ty"]
 [ext_resource type="Texture2D" uid="uid://dvwsaowi1cgo7" path="res://Assets/Background/Bg_animado/felpojam9.png" id="10_bg4s2"]
+[ext_resource type="PackedScene" uid="uid://gfc70uoeir34" path="res://Scene/Tesoura/Tesoura.tscn" id="16_2gh4u"]
 [ext_resource type="AudioStream" uid="uid://0vdukxloa6tn" path="res://Assets/Sons/Musicas/musica_batalha.wav" id="16_fpfj3"]
 [ext_resource type="FontFile" uid="uid://ju70vj1gtel4" path="res://Assets/Font/pixel_twist/PixelTwist.ttf" id="17_kjvhd"]
+[ext_resource type="PackedScene" uid="uid://bt7vvj7d6ga4d" path="res://Scene/Misc/GeradorDeTesoura/GeradorDeTesoura.tscn" id="18_5tuhn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhcpw"]
 animations = [{
@@ -81,6 +83,11 @@ position = Vector2(111, 174)
 light_mask = 2
 z_index = 1
 papels_scene = ExtResource("2_uu6xs")
+
+[node name="GeradorDeTesoura" parent="." unique_id=1974179893 instance=ExtResource("18_5tuhn")]
+light_mask = 2
+z_index = 1
+tesouras_scene = ExtResource("16_2gh4u")
 
 [node name="GeradorDeObjeto" parent="." unique_id=485043465 instance=ExtResource("6_3dxm6")]
 
