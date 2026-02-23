@@ -14,10 +14,12 @@ extends Node2D
 @onready var creditos: Button = $CanvasLayer/ControlMain/Creditos
 @onready var como_jogar: Button = $CanvasLayer/ControlMain/ComoJogar
 @onready var como_jogar_controle: Control = $CanvasLayer/ComoJogarControle
+@onready var creditos_control: Control = $CanvasLayer/Creditos
 
 func _ready() -> void:
 	control_main.visible = true
 	como_jogar_controle.visible = false
+	creditos_control.visible = false
 	
 func _process(delta: float) -> void:
 	if iniciar.is_hovered():
@@ -61,3 +63,13 @@ func _on_sair_de_como_jogar_pressed() -> void:
 func _on_como_jogar_pressed() -> void:
 	control_main.visible = false
 	como_jogar_controle.visible = true
+
+
+func _on_sair_de_creditos_pressed() -> void:
+	creditos_control.visible = false
+	control_main.visible = true
+
+
+func _on_creditos_pressed() -> void:
+	creditos_control.visible = true
+	control_main.visible = false

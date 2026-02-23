@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b2uh5ctylxpi1" path="res://Assets/Background/Letra/LETRA_animacao2.png" id="7_je64r"]
 [ext_resource type="FontFile" uid="uid://846in46d1d33" path="res://Assets/Font/pixel_digivolve/Pixel Digivolve.otf" id="7_r2t0e"]
 [ext_resource type="Texture2D" uid="uid://buspos04e6ljm" path="res://Assets/Background/Letra/LETRA_animacao3.png" id="8_gwknt"]
+[ext_resource type="Script" uid="uid://c0gxpf2x7t0dn" path="res://Scene/Menu/creditos.gd" id="9_20snb"]
 [ext_resource type="Texture2D" uid="uid://b47thywmdayel" path="res://Assets/Background/Letra/LETRA_animacao4.png" id="9_htnpo"]
 [ext_resource type="Texture2D" uid="uid://clfaw5ffkxxtu" path="res://Assets/Background/TelaDeinicio/felpojam_page.png" id="12_gwknt"]
 
@@ -285,6 +286,7 @@ text = "
 metadata/_edit_use_anchors_ = true
 
 [node name="ComoJogarControle" type="Control" parent="CanvasLayer" unique_id=538547881]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -358,6 +360,81 @@ theme_override_fonts/font = ExtResource("7_r2t0e")
 theme_override_font_sizes/font_size = 28
 text = "MOVIMENTAÇÃO"
 
+[node name="Creditos" type="Control" parent="CanvasLayer" unique_id=1151519101]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_20snb")
+onda_intensidade = 1.2
+onda_duracao = 0.3
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Creditos" unique_id=1045575570]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.00003
+offset_top = -166.0
+offset_right = -267.38397
+offset_bottom = -122.291466
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(26.323072, 16.676914)
+
+[node name="ObrigadoPorJogar" type="Label" parent="CanvasLayer/Creditos" unique_id=1737917658]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 583.0
+offset_right = 964.0
+offset_bottom = 617.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_r2t0e")
+theme_override_font_sizes/font_size = 28
+text = "Obrigado por jogar <3"
+horizontal_alignment = 1
+
+[node name="CriadoPor" type="Label" parent="CanvasLayer/Creditos" unique_id=951229230]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 353.0
+offset_right = 1050.0
+offset_bottom = 535.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_r2t0e")
+theme_override_font_sizes/font_size = 28
+text = "Criado por:
+
+Joashneves - GameDev, programador
+
+NilleNeves - Artista"
+horizontal_alignment = 1
+
+[node name="Creditos" type="Label" parent="CanvasLayer/Creditos" unique_id=648836308]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 241.0
+offset_right = 865.0
+offset_bottom = 275.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_r2t0e")
+theme_override_font_sizes/font_size = 28
+text = "CREDITOS"
+horizontal_alignment = 1
+
+[node name="SairDeCreditos" type="Button" parent="CanvasLayer/Creditos" unique_id=651262596]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 704.00006
+offset_right = 789.0
+offset_bottom = 751.00006
+scale = Vector2(3.6096623, 2.2493575)
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("7_r2t0e")
+theme_override_font_sizes/font_size = 28
+text = "SAIR"
+
 [node name="FelpojamPage" type="Sprite2D" parent="." unique_id=1916430576]
 position = Vector2(769, 679)
 scale = Vector2(2, 2)
@@ -393,7 +470,8 @@ libraries/ = SubResource("AnimationLibrary_dvdpk")
 [connection signal="pressed" from="CanvasLayer/ControlMain/ComoJogar" to="." method="_on_como_jogar_pressed"]
 [connection signal="pressed" from="CanvasLayer/ControlMain/Iniciar" to="." method="_on_iniciar_jogo_pressed"]
 [connection signal="pressed" from="CanvasLayer/ControlMain/Sair" to="." method="_on_sair_pressed"]
-[connection signal="pressed" from="CanvasLayer/ControlMain/Creditos" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlMain/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="CanvasLayer/ComoJogarControle/SairDeComoJogar" to="." method="_on_sair_de_como_jogar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Creditos/SairDeCreditos" to="." method="_on_sair_de_creditos_pressed"]
 [connection signal="finished" from="MusicaQueEuFizCommuitocarinho" to="." method="_on_musica_que_eu_fiz_commuitocarinho_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
