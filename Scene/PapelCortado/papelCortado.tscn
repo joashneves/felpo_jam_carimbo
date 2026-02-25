@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://0qmlayxapnhq"]
+
+[ext_resource type="Script" uid="uid://bemv34cof1vho" path="res://Scene/PapelCortado/papel_cortado.gd" id="1_kntnq"]
+[ext_resource type="Texture2D" uid="uid://dfyc0llx65fdm" path="res://Assets/Papel/Papel_cortado_1/folha_reta_cortada1.png" id="2_760oq"]
+[ext_resource type="Texture2D" uid="uid://coeasxlqy5pk1" path="res://Assets/Papel/Papel_cortado_1/folha_reta_cortada2.png" id="3_ny077"]
+[ext_resource type="Texture2D" uid="uid://drp4pgfgyi1qo" path="res://Assets/Papel/Papel_cortado_1/folha_reta_cortada3.png" id="4_me8dl"]
+[ext_resource type="Texture2D" uid="uid://mytfpwomctq1" path="res://Assets/Papel/Papel_cortado_2/papel_cortadol1.png" id="5_d82a3"]
+[ext_resource type="Texture2D" uid="uid://dw1fldepw5whs" path="res://Assets/Papel/Papel_cortado_2/papel_cortadol2.png" id="6_tv3lx"]
+[ext_resource type="Texture2D" uid="uid://rr6wp1tixdgx" path="res://Assets/Papel/Papel_cortado_2/papel_cortadol3.png" id="7_q1epq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itrq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_760oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ny077")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_me8dl")
+}],
+"loop": true,
+"name": &"alternativo",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d82a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tv3lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q1epq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_ny077"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kntnq"]
+resource_name = "animacao_padrao"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_760oq"]
+resource_name = "papel"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cw20d"]
+_data = {
+&"RESET": SubResource("Animation_ny077"),
+&"animacao_padrao": SubResource("Animation_kntnq"),
+&"papel": SubResource("Animation_760oq")
+}
+
+[node name="PapelCortado" type="Node2D" unique_id=600329552]
+script = ExtResource("1_kntnq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=848257337]
+sprite_frames = SubResource("SpriteFrames_itrq1")
+frame_progress = 0.33231577
+
+[node name="Timer" type="Timer" parent="." unique_id=43569992]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=91690818]
+libraries/ = SubResource("AnimationLibrary_cw20d")
+autoplay = &"animacao_padrao"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

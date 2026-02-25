@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://buspos04e6ljm" path="res://Assets/Background/Letra/LETRA_animacao3.png" id="8_gwknt"]
 [ext_resource type="Script" uid="uid://c0gxpf2x7t0dn" path="res://Scene/Menu/creditos.gd" id="9_20snb"]
 [ext_resource type="Texture2D" uid="uid://b47thywmdayel" path="res://Assets/Background/Letra/LETRA_animacao4.png" id="9_htnpo"]
+[ext_resource type="Texture2D" uid="uid://b0xu1s872bmu0" path="res://Assets/Avatar/avatares1.png" id="10_duvdl"]
 [ext_resource type="Texture2D" uid="uid://clfaw5ffkxxtu" path="res://Assets/Background/TelaDeinicio/felpojam_page.png" id="12_gwknt"]
+[ext_resource type="Texture2D" uid="uid://tocp2vmgpjs6" path="res://Assets/Background/titulo_jogo.png" id="18_q4imi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gwknt"]
 animations = [{
@@ -113,6 +115,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../TituloJogo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(275, 55)]
+}
 
 [sub_resource type="Animation" id="Animation_4rlbn"]
 resource_name = "comecar_jogo"
@@ -173,6 +187,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.78431374)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../TituloJogo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(275, 55), Vector2(275, -185)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dvdpk"]
@@ -383,6 +409,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(26.323072, 16.676914)
 
+[node name="Avatares1" type="Sprite2D" parent="CanvasLayer/Creditos" unique_id=700416671]
+position = Vector2(1120, 261)
+texture = ExtResource("10_duvdl")
+
 [node name="ObrigadoPorJogar" type="Label" parent="CanvasLayer/Creditos" unique_id=1737917658]
 layout_mode = 0
 offset_left = 606.0
@@ -436,6 +466,7 @@ theme_override_font_sizes/font_size = 28
 text = "SAIR"
 
 [node name="FelpojamPage" type="Sprite2D" parent="." unique_id=1916430576]
+visible = false
 position = Vector2(769, 679)
 scale = Vector2(2, 2)
 texture = ExtResource("12_gwknt")
@@ -451,6 +482,10 @@ sprite_frames = SubResource("SpriteFrames_gwknt")
 [node name="Letras" type="AnimatedSprite2D" parent="." unique_id=1941240389]
 position = Vector2(365, 141)
 sprite_frames = SubResource("SpriteFrames_5hite")
+
+[node name="TituloJogo" type="Sprite2D" parent="." unique_id=1486422960]
+position = Vector2(275, 55)
+texture = ExtResource("18_q4imi")
 
 [node name="MusicaQueEuFizCommuitocarinho" type="AudioStreamPlayer" parent="." unique_id=2104711251]
 stream = ExtResource("5_ffypu")

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var dano : int = 1000;
+@export var dano : int = 10000;
 @export var pontos : int = -10;
 
 var velocidade : float = 200;
@@ -37,8 +37,8 @@ func verifica_velocidade_e_avanca():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Carimbo"):
-		GameManager.diminui_minutos(dano * 60)
-		GameManager.contabilzar_pontos(pontos)		
+		GameManager.diminui_minutos(dano)
+		GameManager.contabilzar_pontos(pontos)
 		var pontos_criados = pontos_flutuante.instantiate()
 		pontos_criados.quantidade_dos_pontos = pontos
 		pontos_criados.position.x = position.x

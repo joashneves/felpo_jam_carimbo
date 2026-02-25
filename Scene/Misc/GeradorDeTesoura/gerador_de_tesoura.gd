@@ -7,7 +7,7 @@ var level : float = 0;
 
 
 func _on_timer_timeout() -> void:
-	if GameManager.level > 4:
+	if GameManager.level > 3:
 		var instance_tesoura = tesouras_scene.instantiate()
 		var node_carimbo = get_tree().get_first_node_in_group("Carimbo")
 		var spawn = [Vector2(820,432), Vector2(820,0)].pick_random()

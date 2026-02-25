@@ -4,6 +4,7 @@
 com os itens que não são usados juntos a um carimbo
 - Ao encostar em uma comida voce perde ponto e tempos
 - O jogo é sobre conseguir o maximo de pontos possiveis, voce possui 5 minutos para fazer o maximo de pontos possivel
+- As tesouras cortam o papel, mas não dao dano ao player
 ## Controles
 - Para se mover
 	- W ou seta para cima (controle, tanto no analogico, quanto o +)
