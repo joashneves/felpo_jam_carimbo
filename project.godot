@@ -23,6 +23,7 @@ GameManager="*uid://bdmhdenvunkra"
 
 window/size/viewport_width=1536
 window/size/viewport_height=864
+window/size/resizable=false
 
 [file_customization]
 

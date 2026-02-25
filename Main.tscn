@@ -147,7 +147,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Musica_player" type="AudioStreamPlayer" parent="." unique_id=140551955]
 stream = ExtResource("16_fpfj3")
-volume_db = -28.743
+volume_db = -10.0
 autoplay = true
 
 [connection signal="finished" from="Musica_player" to="." method="_on_musica_player_finished"]
